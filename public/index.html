@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tim KC — Software Developer</title>
+  <meta name="description" content="Software developer based in Singapore. Building clean, efficient, user-focused software.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#hero">Tim KC</a>
+      <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#repos">Repos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="hero">
+      <div class="container hero__inner">
+        <p class="hero__eyebrow">Hello, I'm</p>
+        <h1 class="hero__name">Tim KC</h1>
+        <p class="hero__tagline">Software Developer &mdash; building clean, efficient, user-focused software.</p>
+        <div class="hero__links">
+          <a href="mailto:2570464@sit.singaporetech.edu.sg" class="btn btn--primary">Email me</a>
+          <a href="https://github.com/timkc" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/timkc" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container section">
+        <h2 class="section__title">About</h2>
+        <div class="about__body fade">
+          <p>I'm a software developer at the Singapore Institute of Technology with a focus on building practical, well-crafted software. I enjoy working across the stack &mdash; from designing reliable back-end systems to building interfaces that people actually want to use.</p>
+          <p>I care about code quality, clear thinking, and shipping things that work. Outside of coursework I contribute to open-source projects, explore systems programming, and constantly look for ways to understand how things work under the hood.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container section">
+        <h2 class="section__title">Skills</h2>
+        <div class="skills__grid">
+          <div class="skills__group fade">
+            <h3 class="skills__group-label">Languages</h3>
+            <ul class="tag-list" aria-label="Programming languages">
+              <li class="tag">Python</li>
+              <li class="tag">JavaScript</li>
+              <li class="tag">TypeScript</li>
+              <li class="tag">Java</li>
+              <li class="tag">C</li>
+              <li class="tag">SQL</li>
+            </ul>
+          </div>
+          <div class="skills__group fade">
+            <h3 class="skills__group-label">Web</h3>
+            <ul class="tag-list" aria-label="Web technologies">
+              <li class="tag">HTML / CSS</li>
+              <li class="tag">React</li>
+              <li class="tag">Node.js</li>
+              <li class="tag">REST APIs</li>
+            </ul>
+          </div>
+          <div class="skills__group fade">
+            <h3 class="skills__group-label">Tools &amp; Platforms</h3>
+            <ul class="tag-list" aria-label="Tools and platforms">
+              <li class="tag">Git</li>
+              <li class="tag">Linux</li>
+              <li class="tag">Docker</li>
+              <li class="tag">GitHub Actions</li>
+              <li class="tag">PostgreSQL</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container section">
+        <h2 class="section__title">Projects</h2>
+        <div class="projects__grid">
+          <article class="card fade">
+            <h3 class="card__title">timkc-site</h3>
+            <p class="card__desc">This portfolio — plain HTML, CSS, and vanilla JS deployed to GitHub Pages via a single Actions workflow.</p>
+            <a class="card__link" href="https://github.com/timkc/timkc-site" target="_blank" rel="noopener noreferrer">View project</a>
+          </article>
+          <article class="card fade">
+            <h3 class="card__title">Project Two</h3>
+            <p class="card__desc">Replace this with one of your best projects: what it does, what problem it solves, and what stack you used.</p>
+            <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">View project</a>
+          </article>
+          <article class="card fade">
+            <h3 class="card__title">Project Three</h3>
+            <p class="card__desc">Replace this with another strong project. Link to a live demo or the source repo.</p>
+            <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">View project</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="repos">
+      <div class="container section">
+        <h2 class="section__title">GitHub Repos</h2>
+        <div id="repos-grid" class="repos__grid" aria-live="polite" aria-busy="true">
+          <p class="repos__status">Loading repositories&hellip;</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container section">
+        <h2 class="section__title">Contact</h2>
+        <p class="contact__intro">Open to opportunities, collaborations, and interesting conversations. Pick any channel below.</p>
+        <div class="contact__list">
+          <a href="mailto:2570464@sit.singaporetech.edu.sg" class="contact__item fade">
+            <span class="contact__label">Email</span>
+            <span class="contact__value">2570464@sit.singaporetech.edu.sg</span>
+          </a>
+          <a href="https://github.com/timkc" class="contact__item fade" target="_blank" rel="noopener noreferrer">
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value">github.com/timkc</span>
+          </a>
+          <a href="https://linkedin.com/in/timkc" class="contact__item fade" target="_blank" rel="noopener noreferrer">
+            <span class="contact__label">LinkedIn</span>
+            <span class="contact__value">linkedin.com/in/timkc</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Tim KC &copy; 2025 &mdash; plain HTML, CSS &amp; vanilla JS</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
