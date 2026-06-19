@@ -1,3 +1,23 @@
+/* ── Theme toggle ───────────────────────────────────────── */
+const themeBtn = document.getElementById('theme-btn');
+const root = document.documentElement;
+
+function applyTheme(theme) {
+  root.setAttribute('data-theme', theme);
+  themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+}
+
+// Session preference wins; fall back to OS preference
+const storedTheme = sessionStorage.getItem('theme');
+const osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(storedTheme ?? (osDark ? 'dark' : 'light'));
+
+themeBtn.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  sessionStorage.setItem('theme', next);
+});
+
 /* ── Mobile nav ─────────────────────────────────────────── */
 const toggle = document.querySelector('.nav__toggle');
 const navLinks = document.querySelector('.nav__links');

@@ -18,6 +18,27 @@
   --max-w:       1100px;
 }
 
+/* ── Dark mode overrides ──────────────────────────────────── */
+[data-theme="dark"] {
+  --bg:          #0f172a;
+  --surface:     #1e293b;
+  --text:        #f1f5f9;
+  --muted:       #94a3b8;
+  --accent:      #60a5fa;
+  --accent-h:    #3b82f6;
+  --accent-pale: #1e3a5f;
+  --border:      #334155;
+  --shadow-sm:   0 1px 2px rgba(0,0,0,.4);
+  --shadow:      0 4px 6px -1px rgba(0,0,0,.4), 0 2px 4px -2px rgba(0,0,0,.3);
+  --shadow-md:   0 10px 15px -3px rgba(0,0,0,.5), 0 4px 6px -4px rgba(0,0,0,.4);
+}
+
+[data-theme="dark"] .nav          { background: rgba(15,23,42,.85); }
+[data-theme="dark"] #hero         { background: linear-gradient(150deg, #0f172a 55%, #1e3a5f 100%); }
+[data-theme="dark"] .about__body p { color: #cbd5e1; }
+[data-theme="dark"] .tag          { color: var(--text); }
+[data-theme="dark"] .card:hover   { border-color: #475569; }
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-h);
@@ -29,6 +50,7 @@ body {
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
+  transition: background-color .3s, color .3s;
 }
 
 /* ── Layout ───────────────────────────────────────────────── */
@@ -87,6 +109,39 @@ body {
 }
 .nav__links a:hover,
 .nav__links a.active { color: var(--accent); }
+
+/* ── Nav right group (links + theme btn) ──────────────────── */
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ── Theme toggle button ──────────────────────────────────── */
+.theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .2s, border-color .2s, background .2s;
+  flex-shrink: 0;
+}
+.theme-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-pale);
+}
+
+/* Show moon in light mode, sun in dark mode */
+.theme-btn__sun { display: none; }
+[data-theme="dark"] .theme-btn__moon { display: none; }
+[data-theme="dark"] .theme-btn__sun  { display: block; }
 
 .nav__toggle {
   display: none;
@@ -310,7 +365,7 @@ body {
   border-radius: var(--radius);
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow .25s, border-color .25s;
+  transition: box-shadow .25s, border-color .25s, background-color .3s;
 }
 .card:hover {
   box-shadow: var(--shadow-md);
@@ -476,6 +531,8 @@ body {
   }
   .nav__links.open { display: flex; }
   .nav__links a { padding: .5rem 0; font-size: 1rem; }
+
+  .nav__right { gap: .75rem; }
 
   .section { padding: 4rem 1.5rem; }
 
