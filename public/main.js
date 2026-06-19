@@ -7,15 +7,21 @@ function applyTheme(theme) {
   themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
 }
 
-// Session preference wins; fall back to OS preference
-const storedTheme = sessionStorage.getItem('theme');
+function getStoredTheme() {
+  try { return localStorage.getItem('theme'); } catch { return null; }
+}
+
+function setStoredTheme(t) {
+  try { localStorage.setItem('theme', t); } catch {}
+}
+
 const osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-applyTheme(storedTheme ?? (osDark ? 'dark' : 'light'));
+applyTheme(getStoredTheme() ?? (osDark ? 'dark' : 'light'));
 
 themeBtn.addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   applyTheme(next);
-  sessionStorage.setItem('theme', next);
+  setStoredTheme(next);
 });
 
 /* ── Mobile nav ─────────────────────────────────────────── */

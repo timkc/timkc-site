@@ -75,6 +75,7 @@ body {
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
   z-index: 100;
+  transition: background .3s, border-color .3s;
 }
 
 .nav__inner {
